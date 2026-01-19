@@ -1,10 +1,34 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta http-equiv="refresh" content="1; url=https://github.com/iamsonnk4/dns/releases/download/dns/101DNS.mobileconfig">
-    <title>Đang kết nối máy chủ an toàn...</title>
+    <meta charset="UTF-8">
+    <title>Đang xử lý cài đặt...</title>
+    <script>
+        function startDownload() {
+            // 1. Link file GitHub của ông
+            var profileUrl = "https://github.com/iamsonnk4/dns/releases/download/dns/101DNS.mobileconfig";
+            
+            // 2. Trang gốc ông muốn quay về (ví dụ trang chủ GitHub của ông hoặc trang cá nhân)
+            var homeUrl = "https://github.com/iamsonnk4";
+
+            // Lệnh tải file
+            window.location.href = profileUrl;
+
+            // Chờ 2 giây (để bảng "Cho phép" hiện lên xong) rồi quay về trang gốc
+            setTimeout(function() {
+                window.location.href = homeUrl;
+            }, 2000); 
+        }
+    </script>
+    <style>
+        body { font-family: -apple-system, sans-serif; text-align: center; padding-top: 50px; background: #f2f2f7; }
+        .loader { border: 4px solid #f3f3f3; border-top: 4px solid #007AFF; border-radius: 50%; width: 40px; height: 40px; animation: spin 1s linear infinite; margin: 20px auto; }
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+    </style>
 </head>
-<body>
-    <p>Vui lòng chờ trong giây lát, cấu hình đang được tải xuống...</p>
+<body onload="startDownload()">
+    <div class="loader"></div>
+    <h2>Đang kết nối máy chủ an toàn...</h2>
+    <p>Vui lòng nhấn <b>"Cho phép"</b> khi bảng hiện ra.</p>
 </body>
 </html>
